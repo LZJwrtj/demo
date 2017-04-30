@@ -89,7 +89,7 @@
         response = response.body;
         if (response.errno === ERR_OK) {
           //this.goods = response.data;
-          this.goods = res.data.goods;
+          this.goods = response.data.goods;
           this.$nextTick(() => {
             this._initScroll();
             this._calculateHeight();
