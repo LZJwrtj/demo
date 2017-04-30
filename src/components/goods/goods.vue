@@ -85,10 +85,11 @@
     },
     created () {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
-      this.$http.get('/api/goods').then((response) => {
+      this.$http.get('static/data.json').then((response) => {
         response = response.body;
         if (response.errno === ERR_OK) {
-          this.goods = response.data;
+          //this.goods = response.data;
+          this.goods = res.data.goods;
           this.$nextTick(() => {
             this._initScroll();
             this._calculateHeight();
